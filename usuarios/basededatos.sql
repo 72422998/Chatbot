@@ -1,3 +1,4 @@
+DROP DATABASE if EXISTS chat_bot;
 CREATE DATABASE IF NOT EXISTS chat_bot;
 use chat_bot;
 

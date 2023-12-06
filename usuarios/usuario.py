@@ -1,7 +1,6 @@
 import datetime
 import hashlib
 import usuarios.conexion as conexion
-
 connect = conexion.conectar()
 database = connect[0]
 cursor = connect[1]
@@ -48,3 +47,8 @@ class Usuario():
         result =  cursor.fetchone()
 
         return result
+    def get_user_data_by_email(self):
+        sql = "SELECT id FROM usuarios WHERE email = %s"
+        cursor.execute(sql, (self.email,))
+        user_data = cursor.fetchone()
+        return user_data
